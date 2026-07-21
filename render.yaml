@@ -1,0 +1,17 @@
+services:
+  - type: web
+      name: jobpath-ai-backend
+          runtime: python
+              buildCommand: pip install -r requirements.txt
+                  startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+                      envVars:
+                            - key: ANTHROPIC_API_KEY
+                                    sync: false
+                                          - key: EMAIL_FROM
+                                                  sync: false
+                                                        - key: EMAIL_PASS
+                                                                sync: false
+                                                                      - key: EMAIL_TO
+                                                                              sync: false
+                                                                                    - key: MATCH_MIN
+                                                                                            value: "75"
